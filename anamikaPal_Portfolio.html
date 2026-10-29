@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anamika_Pal | Creative Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+@property --a{syntax:'<angle>';initial-value:0deg;inherits:false}
+:root{--bg:#1d1a2b;--card:#2a2640;--rose:#f4b6c2;--gold:#f2d29b;--txt:#f5efe9}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Poppins',sans-serif;background:radial-gradient(circle at 20% 10%,#3b2f5c,var(--bg) 60%);color:var(--txt);min-height:100vh;overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;display:flex;justify-content:center;gap:8px;padding:14px;background:rgba(29,26,43,.7);backdrop-filter:blur(8px);z-index:10;flex-wrap:wrap}
+nav button{background:none;border:none;color:var(--txt);padding:8px 18px;border-radius:30px;cursor:pointer;font:inherit;transition:.3s}
+nav button:hover,nav button.on{background:var(--rose);color:#2a2640}
+.page{display:none;min-height:100vh;padding:110px 6% 60px;animation:fade .8s ease}
+.page.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Playfair Display',serif}
+/* HOME */
+#home.on{display:flex;flex-direction:column;align-items:center;text-align:center}
+.ring{--a:0deg;width:230px;height:230px;border-radius:50%;padding:6px;background:conic-gradient(from var(--a),transparent 0%,#fff 12%,transparent 30%,transparent 60%,#fff 72%,transparent 90%);animation:spin 3s linear infinite;box-shadow:0 0 30px rgba(255,255,255,.25)}
+@keyframes spin{to{--a:360deg}}
+.ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    background: var(--card);
+    display: block;
+}
+/* .ring img{width:100%;height:100%;border-radius:50%;object-fit:cover;background:var(--card);display:block}
+#home h1{font-size:2.6rem;margin:26px 0 6px} */
+.tag{color:var(--gold);letter-spacing:2px;font-size:.9rem;margin-bottom:26px}
+.poem{max-width:560px;min-height:150px;font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;line-height:1.9;color:var(--rose)}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--rose);margin-left:3px;vertical-align:middle;animation:blink 1s infinite}
+@keyframes blink{50%{opacity:0}}
+.btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;margin-top:30px}
+.btn{padding:13px 28px;border-radius:40px;border:none;font:500 .95rem 'Poppins';cursor:pointer;text-decoration:none;color:#2a2640;background:linear-gradient(135deg,var(--rose),var(--gold));transition:.3s;display:inline-block}
+.btn:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 10px 25px rgba(244,182,194,.35)}
+.btn.alt{background:none;color:var(--txt);border:1.5px solid var(--rose)}
+/* ABOUT */
+.wrap{max-width:900px;margin:auto}
+h2{font-size:2.2rem;margin-bottom:18px;color:var(--gold)}
+.wrap p{line-height:1.9;margin-bottom:30px;opacity:.92}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-bottom:34px}
+.card{background:var(--card);padding:24px;border-radius:18px;transition:.4s;border:1px solid rgba(255,255,255,.06)}
+.card:hover{transform:translateY(-8px) rotate(-1deg);border-color:var(--rose)}
+.card span{font-size:2rem}.card h3{margin:10px 0 6px;font-weight:500}.card p{font-size:.88rem;margin:0;opacity:.8;line-height:1.6}
+.books span{display:inline-block;background:rgba(244,182,194,.15);color:var(--rose);padding:8px 16px;border-radius:20px;margin:5px 5px 0 0;font-size:.9rem}
+/* GALLERY */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-bottom:30px}
+.tabs button{padding:9px 22px;border-radius:30px;border:1.5px solid var(--rose);background:none;color:var(--txt);cursor:pointer;font:inherit;transition:.3s}
+.tabs button.on,.tabs button:hover{background:var(--rose);color:#2a2640}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;max-width:1100px;margin:auto}
+.item{border-radius:16px;overflow:hidden;background:var(--card);aspect-ratio:1;cursor:zoom-in;opacity:0;transform:translateY(40px) scale(.9);animation:pop .7s forwards;position:relative}
+@keyframes pop{to{opacity:1;transform:none}}
+.item img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.item:hover img{transform:scale(1.12) rotate(1.5deg)}
+.item::after{content:attr(data-t);position:absolute;bottom:0;left:0;right:0;padding:14px;background:linear-gradient(transparent,rgba(0,0,0,.7));transform:translateY(100%);transition:.4s;font-size:.9rem}
+.item:hover::after{transform:none}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.88);display:none;align-items:center;justify-content:center;z-index:50;cursor:zoom-out}
+#lb.on{display:flex}#lb img{max-width:90%;max-height:88%;border-radius:12px;animation:pop .4s forwards}
+.petal{position:fixed;top:-20px;width:10px;height:10px;background:var(--rose);border-radius:50% 0 50% 0;opacity:.6;pointer-events:none;animation:fall linear forwards;z-index:1}
+@keyframes fall{to{transform:translateY(105vh) rotate(540deg)}}
+</style>
+</head>
+<body>
+
+<nav>
+  <button class="on" data-p="home">Home</button>
+  <button data-p="about">About Me</button>
+  <button data-p="art">Creativity </button>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="page on">
+  <div class="ring"><img src="images/profile.png" alt="Anamika"></div>
+  <h1>Welcome to, My Creative Universe, I'm Anamika ✨</h1>
+  <div class="tag">ARTIST & SKETCHER · PHOTOGRAPHER · DIARY WRITER · POETRY LOVER 
+  </div>
+  <div class="poem" id="poem"></div>
+  <div class="btns">
+    <button class="btn" onclick="go('about')">Know Me Better </button>
+    <button class="btn" onclick="go('art')">My Creative Space</button>
+    <!-- APNA GITHUB LINK YAHAN DAALO 👇 -->
+    <a class="btn alt" href="https://github.com/anamika-08-cell/minimalist-bookmark-manager" target="_blank" rel="noopener">My Digital Shelf</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <div class="wrap">
+    <h2>About Me</h2>
+    <p>Welcome to my creative sanctuary! I am Anamika—a visual explorer and storyteller.
+Through my brush, camera, and words, I turn raw emotions into reality.
+ Nature restores me, art centers me, and writing grounds me. Step inside to 
+ explore the unseen stories waiting for you:)
+</p>
+  <div class="cards">
+    <div class="card"><span>✏️</span><h3>Art & Sketching</h3><p>Translating unspoken thoughts and raw human emotions into monochrome pencil strokes.</p></div>
+    <div class="card"><span>🖌️</span><h3>Mural & Wall Art</h3><p>Transforming blank, lifeless spaces into vibrant visual stories that breathe and inspire.</p></div>
+    <div class="card"><span>🌿</span><h3>Nature Photography</h3><p>Freezing the transient beauty of earth and capturing the quiet symphony of the outdoors.</p></div>
+    <div class="card"><span>📔</span><h3>Reflective Writing</h3><p>Pouring a piece of my soul onto paper, documenting thoughts, patterns, and life’s little truths.</p></div>
+    <div class="card"><span>🪶</span><h3>Poetry & Verse</h3><p>Sculpting rhythm and metaphor out of everyday experiences to seek comfort and solace.</p></div>
+</div>
+
+    <h2 style="font-size:1.6rem">The Pages That Shaped Me📚</h2>
+    <div class="books">
+      <span>The Obstacle Is the Way (by Ryan Holiday)</span><span>The Midnight Library (by Matt Haig)</span><span>Get the Basics Right: A Manual for Life (by Sumanth)</span>
+    </div>
+    <p style="margin-top:30px;font-style:italic;color:var(--rose)">'Just begin today:)' </p>
+    <p style="margin-top:30px;font-style:italic;color:var(--rose)">"· Find your passion, learn the craft, and start doing it.
+         Stay consistent, experiment when needed, and trust your progress. </p>
+
+    <p style="margin-top:30px;font-style:italic;color:var(--rose)">· Sometimes, we need to focus on quality rather than quantity. Then you can master anything."
+    </p>
+  </div>
+</section>
+
+<!-- CREATIVITY -->
+<section id="art" class="page">
+  <h2 style="text-align:center">Meri Creativity 🎨</h2>
+  <div class="tabs" id="tabs"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<div id="lb"><img id="lbimg" src="" alt=""></div>
+
+<script>
+/* ===== 1. APNI POETRY YAHAN DAALO (ek line = ek item) ===== */
+const lines = [
+          'MUSHKURAO',
+  "Muskurao agar aaj kahi se har gye ho.",
+  "Kisi aur ko us jeet ki tumse jada jarurat thi shayad!!",
+  "Muskurao agar kuch kho gya hai to.",
+  "Jiske nasib ka tha use mil gya hai shayad!!",
+  "Ye jo bar bar soch ke hatash ho jate ho",
+  "Ki isse acha ye ho jata,isse acha wo ho jata.",
+  "tab ye soch ke muskurao ki isse bura ho jata to kya ho jata!!",
+ "Muskurao agar koi puche jindagi jine ka kya hai salika. Muskurao ye kahker ki humne jindagi se muskurana sikha.",
+ "Muskurao if you have to walk miles & miles. Becoz it is ok if your glass is half empty.",
+ "You can fill it with your smile :)...."
+];
+
+/* ===== 2. APNI IMAGES YAHAN DAALO (images folder mein rakho) ===== */
+const gallery = {
+  "Sketches":["images/sketch9.png","images/sketch8.png","images/sketch2_krishna_radha.png","images/skecth6.png","images/skectch_radah_krishna.png","images/real_sketch3.png","images/real_sketch.png","images/real_sketch2.png","images/camera_girl.png","images/mandal.png"],
+ "Wall Paintings":["images/clay_Art.png","images/durga_ma_drawing.png","images/wall_p2.png", "images/wall_p3.png", "images/wall_p5.png","images/Wall_p6.png"],
+ "Mehendi":["images/krishna _mehendi.png","images/mehendi2.png","images/mehendi3.png","images/mehendi4.png","images/mehendi5.png","images/mehendi6.png","images/mehendi7.png","images/mehendi8.png","images/mehendiWithFlower.png","images/mehndi9.png"],
+
+  "Nature":["WhatsApp Image 2026-10-29 at 9.30.53 PM.jpeg","images/sunflower.png","images/snail.png","images/parrot2.png","images/moon.png","images/insects.png","images/flower3.png","images/banglore.png","images/day_view.png","images/evening_view2.png","images/flower_bhut_sare.png","images/winter_sunset.png"]
+};
+
+/* ===== Page switching ===== */
+const navBtns = document.querySelectorAll('nav button');
+function go(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('on',p.id===id));
+  navBtns.forEach(b=>b.classList.toggle('on',b.dataset.p===id));
+  window.scrollTo(0,0);
+  if(id==='art' && !document.querySelector('.item')) show(Object.keys(gallery)[0]);
+}
+navBtns.forEach(b=>b.onclick=()=>go(b.dataset.p));
+
+/* ===== Typing poem, line by line ===== */
+const box = document.getElementById('poem');
+const sleep = ms => new Promise(r=>setTimeout(r,ms));
+async function typePoem(){
+  const cur = document.createElement('span'); cur.className='cursor';
+  for(const l of lines){
+    const d = document.createElement('div'); box.appendChild(d);
+    d.after(cur);
+    for(const ch of l){ d.textContent += ch; await sleep(70); }
+    await sleep(500);
+  }
+}
+typePoem();
+
+/* ===== Gallery ===== */
+const tabs = document.getElementById('tabs'), grid = document.getElementById('grid');
+Object.keys(gallery).forEach(k=>{
+  const b = document.createElement('button'); b.textContent = k; b.onclick = ()=>show(k); tabs.appendChild(b);
+});
+function show(k){
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===k));
+  grid.innerHTML = '';
+  gallery[k].forEach((src,i)=>{
+    const d = document.createElement('div'); d.className='item'; d.dataset.t = k;
+    d.style.animationDelay = (i*0.15)+'s';
+    const im = new Image(); im.src = src; im.alt = k;
+    im.onerror = ()=>{ im.remove(); d.style.display='flex'; d.style.alignItems='center'; d.style.justifyContent='center'; d.textContent='Image yahan aayegi 🖼️'; };
+    d.appendChild(im);
+    d.onclick = ()=>{ if(im.parentNode){ lbimg.src = src; lb.classList.add('on'); } };
+    grid.appendChild(d);
+  });
+}
+const lb = document.getElementById('lb'), lbimg = document.getElementById('lbimg');
+lb.onclick = ()=>lb.classList.remove('on');
+
+/* ===== Falling petals ===== */
+setInterval(()=>{
+  const p = document.createElement('div'); p.className='petal';
+  p.style.left = Math.random()*100+'vw';
+  const t = 6+Math.random()*6; p.style.animationDuration = t+'s';
+  document.body.appendChild(p); setTimeout(()=>p.remove(), t*1000);
+}, 700);
+</script>
+</body>
+</html>
