@@ -72,20 +72,20 @@ h2{font-size:2.2rem;margin-bottom:18px;color:var(--gold)}
   <button class="on" data-p="home">Home</button>
   <button data-p="about">About Me</button>
   <button data-p="art">Creativity </button>
+  <button data-p="shelf">Digital Shelf</button>
 </nav>
 
 <!-- HOME -->
 <section id="home" class="page on">
   <div class="ring"><img src="images/profile.png" alt="Anamika"></div>
   <h1>Welcome to, My Creative Universe, I'm Anamika ✨</h1>
-  <div class="tag">ARTIST & SKETCHER · PHOTOGRAPHER · DIARY WRITER · POETRY LOVER 
-  </div>
+  
   <div class="poem" id="poem"></div>
   <div class="btns">
     <button class="btn" onclick="go('about')">Know Me Better </button>
     <button class="btn" onclick="go('art')">My Creative Space</button>
-    <!-- APNA GITHUB LINK YAHAN DAALO 👇 -->
-    <a class="btn alt" href="https://github.com/anamika-08-cell/minimalist-bookmark-manager" target="_blank" rel="noopener">My Digital Shelf</a>
+  
+    <button class="btn" onclick="go('shelf')">My Digital Shelf</button>
   </div>
 </section>
 
@@ -93,30 +93,62 @@ h2{font-size:2.2rem;margin-bottom:18px;color:var(--gold)}
 <section id="about" class="page">
   <div class="wrap">
     <h2>About Me</h2>
-    <p>Welcome to my creative sanctuary! I am Anamika—a visual explorer and storyteller.
-Through my brush, camera, and words, I turn raw emotions into reality.
- Nature restores me, art centers me, and writing grounds me. Step inside to 
- explore the unseen stories waiting for you:)
-</p>
+    <p>I am Anamika Pal.
+For me, sketching is a form of meditation; it sharpens my focus and teaches me to notice the finest details. Wall painting is where my heart finds its voice,a massive canvas where I can pour out my inner thoughts using a brush.
+My inspiration anchors itself in nature. Spending hours on my veranda among the chirping birds and quiet flowers is a meditative experience that sparked my journey of self-discovery. Nature has taught me my greatest lesson: just as every flower has its own unique quality, I have my own identity. A flower never stops spreading its fragrance out of fear of fading away, and I will never stop trying out of fear of falling or failing.
+<!-- </p>
   <div class="cards">
     <div class="card"><span>✏️</span><h3>Art & Sketching</h3><p>Translating unspoken thoughts and raw human emotions into monochrome pencil strokes.</p></div>
     <div class="card"><span>🖌️</span><h3>Mural & Wall Art</h3><p>Transforming blank, lifeless spaces into vibrant visual stories that breathe and inspire.</p></div>
     <div class="card"><span>🌿</span><h3>Nature Photography</h3><p>Freezing the transient beauty of earth and capturing the quiet symphony of the outdoors.</p></div>
     <div class="card"><span>📔</span><h3>Reflective Writing</h3><p>Pouring a piece of my soul onto paper, documenting thoughts, patterns, and life’s little truths.</p></div>
-    <div class="card"><span>🪶</span><h3>Poetry & Verse</h3><p>Sculpting rhythm and metaphor out of everyday experiences to seek comfort and solace.</p></div>
+   -->
+  <div class="cards">
+    <!-- Art & Sketching Card -->
+    <div class="card" onclick="go('art'); show('Sketches');" style="cursor: pointer;">
+        <span>✏️</span>
+        <h3>Art & Sketching</h3>
+        <p>A piece of my mind.</p>
+    </div>
+
+    <!-- Mural & Wall Art Card -->
+    <div class="card" onclick="go('art'); show('Wall Paintings');" style="cursor: pointer;">
+        <span>🖌️</span>
+        <h3>Mural & Wall Art</h3>
+        <p>Drawing thoughts on walls</p>
+    </div>
+
+    <!-- Nature Photography Card -->
+    <div class="card" onclick="go('art'); show('Nature');" style="cursor: pointer;">
+        <span>🌿</span>
+        <h3>Nature Photography</h3>
+        <p>learning new things.</p>
+    </div>
+
+</div>
+<h2 style="font-size: 2.2rem; margin-top: 50px; color: var(--gold); width: 100%; text-align: left;">The Pages That Shaped Me 📚</h2>
+<div class="books" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+  
+  <!-- Book 1 -->
+  <div style="background: var(--card); padding: 15px; border-radius: 12px; text-align: center; max-width: 220px; border: 1px solid rgba(255,255,255,.06);">
+    <img src="images/image2.png" alt="The Obstacle Is the Way" style="width: 100%; height: 260px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
+    <span style="display: block; background: none; color: var(--rose); font-size: .95rem; padding: 0;">The Obstacle Is the Way (by Ryan Holiday)</span>
+  </div>
+
+  <!-- Book 2 -->
+  <div style="background: var(--card); padding: 15px; border-radius: 12px; text-align: center; max-width: 220px; border: 1px solid rgba(255,255,255,.06);">
+    <img src="images/image1.png" alt="The Midnight Library" style="width: 100%; height: 260px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
+    <span style="display: block; background: none; color: var(--rose); font-size: .95rem; padding: 0;">The Midnight Library (by Matt Haig)</span>
+  </div>
+
+  <!-- Book 3 -->
+  <div style="background: var(--card); padding: 15px; border-radius: 12px; text-align: center; max-width: 220px; border: 1px solid rgba(255,255,255,.06);">
+    <img src="images/image3.png" alt="Get the Basics Right" style="width: 100%; height: 260px; object-fit: cover; border-radius: 6px; margin-bottom: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.3);">
+    <span style="display: block; background: none; color: var(--rose); font-size: .95rem; padding: 0;">Get the Basics Right: A Manual for Life (by Sumanth)</span>
+  </div>
+
 </div>
 
-    <h2 style="font-size:1.6rem">The Pages That Shaped Me📚</h2>
-    <div class="books">
-      <span>The Obstacle Is the Way (by Ryan Holiday)</span><span>The Midnight Library (by Matt Haig)</span><span>Get the Basics Right: A Manual for Life (by Sumanth)</span>
-    </div>
-    <p style="margin-top:30px;font-style:italic;color:var(--rose)">'Just begin today:)' </p>
-    <p style="margin-top:30px;font-style:italic;color:var(--rose)">"· Find your passion, learn the craft, and start doing it.
-         Stay consistent, experiment when needed, and trust your progress. </p>
-
-    <p style="margin-top:30px;font-style:italic;color:var(--rose)">· Sometimes, we need to focus on quality rather than quantity. Then you can master anything."
-    </p>
-  </div>
 </section>
 
 <!-- CREATIVITY -->
@@ -125,6 +157,33 @@ Through my brush, camera, and words, I turn raw emotions into reality.
   <div class="tabs" id="tabs"></div>
   <div class="grid" id="grid"></div>
 </section>
+<!-- DIGITAL SHELF LANDING PAGE -->
+<!-- <section id="shelf" class="page">
+  <div class="wrap">
+    <h2>My Digital Shelf 📚</h2>
+    <p style="font-size: 1.1rem; line-height: 2; margin-bottom: 20px;">
+      Mujhe internet par useful links, articles aur resource...
+    </p>
+    ...
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn" href="https://anamika-pal-minimalist-bookmark.onrender.com/" target="_blank" rel="noopener">Click Here to See My Project</a>
+    </div>
+  </div>
+</section> -->
+<!-- DIGITAL SHELF LANDING PAGE -->
+<section id="shelf" class="page">
+  <div class="wrap">
+    
+    
+    <!-- Yahan aapki bookmark vaali lines ek ke baad ek type hongi -->
+    <div class="poem" id="shelf-text" style="margin-bottom: 30px; min-height: 150px;"></div>
+    
+    <div style="text-align: center; margin-top: 40px;">
+      <a class="btn" href="https://anamika-pal-minimalist-bookmark.onrender.com/" target="_blank" rel="noopener">Click Here to See My Project</a>
+    </div>
+  </div>
+</section>
+
 
 <div id="lb"><img id="lbimg" src="" alt=""></div>
 
@@ -132,16 +191,36 @@ Through my brush, camera, and words, I turn raw emotions into reality.
 /* ===== 1. APNI POETRY YAHAN DAALO (ek line = ek item) ===== */
 const lines = [
           'MUSHKURAO',
-  "Muskurao agar aaj kahi se har gye ho.",
-  "Kisi aur ko us jeet ki tumse jada jarurat thi shayad!!",
-  "Muskurao agar kuch kho gya hai to.",
-  "Jiske nasib ka tha use mil gya hai shayad!!",
+  "Muskurao agar aaj kahi se har gye ho. Kisi aur ko us jeet ki tumse jada jarurat thi shayad!!",
   "Ye jo bar bar soch ke hatash ho jate ho",
   "Ki isse acha ye ho jata,isse acha wo ho jata.",
   "tab ye soch ke muskurao ki isse bura ho jata to kya ho jata!!",
- "Muskurao agar koi puche jindagi jine ka kya hai salika. Muskurao ye kahker ki humne jindagi se muskurana sikha.",
- "Muskurao if you have to walk miles & miles. Becoz it is ok if your glass is half empty.",
- "You can fill it with your smile :)...."
+
+];
+
+/* ===== 1.2 APNI BOOKMARK KI LINES  ===== */
+const bookmarkLines = [
+  
+"MINIMAL BOOKMARK MANAGER",
+    "I am deeply passionate about discovering useful links and articles on the internet.",
+    "However, while reading, I often found myself falling into endless rabbit holes.",
+    "For instance, searching for one thing on Wikipedia would trigger so many more doubts and questions that I would start reading about them too, causing me to completely lose track of my main topic.",
+    "I would just keep reading random things, and whenever I tried to refocus on the main topic and found something else interesting, I would want to read that as well.",
+    "Have you ever found an interesting study resource, tutorial, or website and later struggled to find it again?",
+    "My browser tabs were always cluttered, and essential resources kept getting lost.",
+    "To manage this, I started writing those links down in a notebook, planning to explore them on Sundays.",
+    "But writing them in a notebook didn't prove to be very useful for me, and managing them became a huge hassle.",
+    "Frustrated by this chaotic experience, I decided to build my own \"Digital Shelf.\"",
+    "At that time, I was learning FastAPI, so I thought of creating a solution to my own problem.",
+    "This project is also a part of my journey toward learning backend development with Python and building practical software solutions.",
+    "That is how I built this Minimal Bookmark Manager—a simple, lightweight bookmark management application built with FastAPI and SQLite to help users save interesting links and keep useful online resources organized in one place.",
+    "Initially, I made this project just for myself so I could run it on my localhost.",
+    "But later, I deployed it so that anyone could use it.",
+    "Now, people can share their feedback and experience with me, which will help me implement new updates and make it even better.",
+    "Moving forward, I am planning to implement the following features:",
+    "User registration and login.",
+    "Personal bookmarks for individual users.",
+    "Bookmark search and filtering."
 ];
 
 /* ===== 2. APNI IMAGES YAHAN DAALO (images folder mein rakho) ===== */
@@ -153,6 +232,8 @@ const gallery = {
   "Nature":["WhatsApp Image 2026-10-29 at 9.30.53 PM.jpeg","images/sunflower.png","images/snail.png","images/parrot2.png","images/moon.png","images/insects.png","images/flower3.png","images/banglore.png","images/day_view.png","images/evening_view2.png","images/flower_bhut_sare.png","images/winter_sunset.png"]
 };
 
+
+
 /* ===== Page switching ===== */
 const navBtns = document.querySelectorAll('nav button');
 function go(id){
@@ -160,6 +241,7 @@ function go(id){
   navBtns.forEach(b=>b.classList.toggle('on',b.dataset.p===id));
   window.scrollTo(0,0);
   if(id==='art' && !document.querySelector('.item')) show(Object.keys(gallery)[0]);
+  if(id==='shelf') typeBookmark(); 
 }
 navBtns.forEach(b=>b.onclick=()=>go(b.dataset.p));
 
@@ -176,6 +258,56 @@ async function typePoem(){
   }
 }
 typePoem();
+
+/* =========================================================================
+   ⚡ CHANGE 2: NAYA FUNCTION - Jisse aapki Bookmark ki lines automatic type hongi
+   ========================================================================= */
+const shelfBox = document.getElementById('shelf-text');
+let bookmarkTyped = false; // Isse loop sirf pehli baar click karne par chalega
+
+async function typeBookmark(){
+  if (!shelfBox || bookmarkTyped) return; 
+  bookmarkTyped = true;
+  
+  const cur = document.createElement('span'); 
+  cur.className = 'cursor';
+  
+  for(const l of bookmarkLines){
+    const d = document.createElement('div'); 
+    d.style.marginBottom = "15px";
+    
+    // Heading aur List Items ke liye styling conditions
+    if (l === "MINIMAL BOOKMARK MANAGER") {
+        d.style.color = "var(--gold)";
+        d.style.fontSize = "1.6rem";
+        d.style.fontWeight = "600";
+        d.style.textAlign = "center";
+        d.style.marginBottom = "25px";
+        d.style.fontFamily = "'Playfair Display', serif";
+    } else if (l.includes("User registration") || l.includes("Personal bookmarks") || l.includes("Bookmark search")) {
+        d.style.color = "var(--rose)";
+        d.style.paddingLeft = "20px";
+        d.textContent = "• ";
+    }
+    
+    shelfBox.appendChild(d);
+    d.appendChild(cur);
+    
+    for(const ch of l){ 
+      if(l.includes("User registration") || l.includes("Personal bookmarks") || l.includes("Bookmark search")) {
+        d.innerHTML = "• " + d.innerHTML.replace('• ', '').replace('<span class="cursor"></span>', '') + ch;
+      } else {
+        d.innerHTML = d.innerHTML.replace('<span class="cursor"></span>', '') + ch; 
+      }
+      d.appendChild(cur);
+      await sleep(15); // Lambe lines hain, isliye typing speed tez (15ms) rakhi hai
+    }
+    await sleep(250);
+  }
+  cur.remove(); // Khatam hone par cursor gayab ho jayega
+}
+/* ========================================================================= */
+
 
 /* ===== Gallery ===== */
 const tabs = document.getElementById('tabs'), grid = document.getElementById('grid');
